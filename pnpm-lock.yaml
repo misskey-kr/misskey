@@ -217,6 +217,9 @@ importers:
       hpagent:
         specifier: 1.2.0
         version: 1.2.0
+      http-link-header:
+        specifier: ^1.1.0
+        version: 1.1.0
       ioredis:
         specifier: 5.3.2
         version: 5.3.2
@@ -543,6 +546,12 @@ importers:
       '@types/fluent-ffmpeg':
         specifier: 2.1.21
         version: 2.1.21
+      '@types/http-link-header':
+        specifier: ^1.0.3
+        version: 1.0.3
+      '@types/ioredis':
+        specifier: 4.28.10
+        version: 4.28.10
       '@types/jest':
         specifier: 29.5.1
         version: 29.5.1
@@ -6817,6 +6826,18 @@ packages:
   /@types/http-cache-semantics@4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
 
+  /@types/http-link-header@1.0.3:
+    resolution: {integrity: sha512-y8HkoD/vyid+5MrJ3aas0FvU3/BVBGcyG9kgxL0Zn4JwstA8CglFPnrR0RuzOjRCXwqzL5uxWC2IO7Ub0rMU2A==}
+    dependencies:
+      '@types/node': 18.16.3
+    dev: true
+
+  /@types/ioredis@4.28.10:
+    resolution: {integrity: sha512-69LyhUgrXdgcNDv7ogs1qXZomnfOEnSmrmMFqKgt1XMJxmoOSG/u3wYy13yACIfKuMJ8IhKgHafDO3sx19zVQQ==}
+    dependencies:
+      '@types/node': 18.16.3
+    dev: true
+
   /@types/istanbul-lib-coverage@2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
@@ -12553,6 +12574,11 @@ packages:
       setprototypeof: 1.2.0
       statuses: 2.0.1
       toidentifier: 1.0.1
+
+  /http-link-header@1.1.0:
+    resolution: {integrity: sha512-pj6N1yxOz/ANO8HHsWGg/OoIL1kmRYvQnXQ7PIRpgp+15AnEsRH8fmIJE6D1OdWG2Bov+BJHVla1fFXxg1JbbA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /http-proxy-agent@5.0.0:
     resolution: {integrity: sha512-n2hY8YdoRE1i7r6M0w9DIw5GgZN0G25P8zLCRQ8rjXtTU3vsNFBI/vWK/UIeE6g5MUUz6avwAPXmL6Fy9D/90w==}
