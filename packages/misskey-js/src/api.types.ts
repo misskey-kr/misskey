@@ -549,6 +549,21 @@ export type Endpoints = {
 	'room/show': { req: TODO; res: TODO; };
 	'room/update': { req: TODO; res: TODO; };
 
+	// signup
+	'signup': {
+		req: {
+			username: string;
+			password: string;
+			host?: string;
+			invitationCode?: string;
+			emailAddress?: string;
+			'hcaptcha-response'?: string;
+			'g-recaptcha-response'?: string;
+			'turnstile-response'?: string;
+		};
+		res: User & { token: string };
+	};
+
 	// stats
 	'stats': { req: NoParams; res: Stats; };
 

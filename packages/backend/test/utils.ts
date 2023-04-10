@@ -10,17 +10,20 @@ import { DEFAULT_POLICIES } from '@/core/RoleService.js';
 import { entities } from '../src/postgres.js';
 import { loadConfig } from '../src/config.js';
 import type * as misskey from 'misskey-js';
+import type { UserDetailed } from 'misskey-js/built/entities.js';
 
 export { server as startServer } from '@/boot/common.js';
+
+export type ImmediateSignup = UserDetailed & { token: string };
 
 const config = loadConfig();
 export const port = config.port;
 
-export const cookie = (me: any): string => {
+export const cookie = (me: ImmediateSignup): string => {
 	return `token=${me.token};`;
 };
 
-export const api = async (endpoint: string, params: any, me?: any) => {
+export const api = async (endpoint: string, params: any, me?: ImmediateSignup) => {
 	const normalized = endpoint.replace(/^\//, '');
 	return await request(`api/${normalized}`, params, me);
 };
@@ -83,7 +86,7 @@ export const relativeFetch = async (path: string, init?: RequestInit | undefined
 	return await fetch(new URL(path, `http://127.0.0.1:${port}/`).toString(), init);
 };
 
-export const signup = async (params?: any): Promise<any> => {
+export const signup = async (params?: any): Promise<UserDetailed & { token: string }> => {
 	const q = Object.assign({
 		username: 'test',
 		password: 'test',

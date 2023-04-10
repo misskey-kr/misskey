@@ -1942,6 +1942,21 @@ export type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'signup': {
+        req: {
+            username: string;
+            password: string;
+            host?: string;
+            invitationCode?: string;
+            emailAddress?: string;
+            'hcaptcha-response'?: string;
+            'g-recaptcha-response'?: string;
+            'turnstile-response'?: string;
+        };
+        res: User & {
+            token: string;
+        };
+    };
     'stats': {
         req: NoParams;
         res: Stats;
@@ -2717,7 +2732,7 @@ type UserSorting = '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+u
 //
 // src/api.types.ts:16:32 - (ae-forgotten-export) The symbol "TODO" needs to be exported by the entry point index.d.ts
 // src/api.types.ts:18:25 - (ae-forgotten-export) The symbol "NoParams" needs to be exported by the entry point index.d.ts
-// src/api.types.ts:596:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
+// src/api.types.ts:611:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
 // src/streaming.types.ts:33:4 - (ae-forgotten-export) The symbol "FIXME" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
